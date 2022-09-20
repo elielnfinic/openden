@@ -1,3 +1,4 @@
-# ipfs-encrypt
+# IPFS-Encrypt 
 
-IPFS 
+Secure protected data on IPFS 
+
