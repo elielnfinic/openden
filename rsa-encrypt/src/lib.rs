@@ -1,7 +1,9 @@
 use wasm_bindgen::prelude::*;
 use wee_alloc::WeeAlloc;
-use bip32::{Prefix, XPrv, Mnemonic};
+use bip32::{Prefix, XPrv, Mnemonic, Seed};
 use rand_core::OsRng;
+
+use k256::{elliptic_curve, pkcs8};
 
 extern crate wee_alloc;
 extern crate bip39;
@@ -41,6 +43,15 @@ pub fn get_mnemonic(password : &str) -> Identity{
         public_key : p.to_string(Prefix::XPUB)
     }
 }
+
+#[wasm_bindgen]
+pub fn get_private_key(phrase : &str, password : &str) -> String{
+    let mnemonic = Mnemonic::new(phrase, Default::default()).unwrap();
+    let seed = mnemonic.to_seed(password);
+    let private_key = XPrv::new(&seed).unwrap();
+    private_key.to_string(Prefix::XPRV).to_string()
+}
+
 
 #[cfg(test)]
 mod tests{
