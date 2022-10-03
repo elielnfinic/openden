@@ -61,31 +61,3 @@ mod tests{
         println!("Testing {}",super::get_mnemonic("eliel"));
     }
 }
-
-/*
-fn gen() {
-        let mnemonic = Mnemonic::new(MnemonicType::Words24, Language::English);
-        let phrase: &str = mnemonic.phrase();
-        println!("phrase: {:?}", mnemonic);
-
-        
-        let seed = Seed::new(&mnemonic, "");
-
-        
-        let seed_bytes: &[u8] = seed.as_bytes();
-
-        
-        println!("{:X}", seed);
-
-        let root_xprv = XPrv::new(&seed).unwrap();
-        
-
-        let pubX = root_xprv.public_key();
-        println!("Key is {:?}", pubX);
-
-        let signing_key = root_xprv.private_key();
-        let msg = b"Hello world";
-        let encrypted = signing_key.sign(msg);
-
-    
-}*/
