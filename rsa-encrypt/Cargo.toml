@@ -7,5 +7,9 @@ author = "@elielnfinic | @elielmathe(Twitter)"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
+bip32 = "0.4.0"
+bip39 = "1.0.1"
+rand = "0.8.5"
+rand_core = "0.6.4"
 wasm-bindgen = "0.2.83"
 wee_alloc = "0.4.5"
