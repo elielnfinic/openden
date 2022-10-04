@@ -45,6 +45,12 @@ pub fn get_mnemonic(password : &str) -> Identity{
 }
 
 #[wasm_bindgen]
+pub fn generate_mnemonic_phrase() -> String{
+    let mnemonic = Mnemonic::random(&mut OsRng, Default::default());
+    mnemonic.phrase().to_string()
+}
+
+#[wasm_bindgen]
 pub fn get_private_key(phrase : &str, password : &str) -> String{
     let mnemonic = Mnemonic::new(phrase, Default::default()).unwrap();
     let seed = mnemonic.to_seed(password);

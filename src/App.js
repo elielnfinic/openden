@@ -1,4 +1,4 @@
-import init,{get_mnemonic, generate_keys, get_private_key} from "rsa-encrypt";
+import init,{get_mnemonic, generate_keys, get_private_key, generate_mnemonic_phrase} from "rsa-encrypt";
 
 const getInfo = async () => {
   await init();
@@ -6,7 +6,8 @@ const getInfo = async () => {
   console.log(generate_keys());
   const data = await get_mnemonic("abcd");
   const data2 = await get_private_key("retreat olive cancel tilt depart antique reject jacket acoustic visit legend midnight rookie salon attitude poet timber panic armed supreme consider card body gas","");
-  console.log(data2);
+  const data3 = await generate_mnemonic_phrase();
+  console.log(data3);
 }
 
 const App = () => {
