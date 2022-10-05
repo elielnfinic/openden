@@ -58,6 +58,15 @@ pub fn get_private_key(phrase : &str, password : &str) -> String{
     private_key.to_string(Prefix::XPRV).to_string()
 }
 
+#[wasm_bindgen]
+pub fn get_public_key(phrase : &str, password : &str) -> String{
+    let mnemonic = Mnemonic::new(phrase, Default::default()).unwrap();
+    let seed = mnemonic.to_seed(password);
+    let private_key = XPrv::new(&seed).unwrap();
+    let public_key = private_key.public_key();
+    public_key.to_string(Prefix::XPUB).to_string()
+}
+
 
 #[cfg(test)]
 mod tests{
