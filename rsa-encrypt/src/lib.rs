@@ -19,6 +19,10 @@ use rsa::{
     BigUint
 };
 
+use std::hash::{Hash, Hasher};
+
+
+
 use rand::*;
 
 extern crate wee_alloc;
@@ -119,6 +123,10 @@ pub fn encrypt_data(data : &str, phrase : &str, password : &str) -> String{
 
 #[cfg(test)]
 mod tests{
+    //use std::{collections::hash_map::DefaultHasher, hash::Hasher};
+
+    use std::{collections::hash_map::DefaultHasher, hash::{Hash, Hasher}};
+
     use rand_core::{RngCore, SeedableRng};
     use rsa::{RsaPrivateKey, BigUint, pkcs1::EncodeRsaPrivateKey};
 
@@ -128,10 +136,17 @@ mod tests{
         println!("Testing {}",super::get_mnemonic("eliel"));
     }*/
 
+    
+
     #[test]
     pub fn second(){
         let encrypted = super::rsa_encrypt(vec![10]);
         println!("Encrypted is {}", encrypted);
+    }
+
+    #[derive(Hash)]
+    struct PhraseMnemo1{
+        phrase : String
     }
 
     #[test]
@@ -146,22 +161,41 @@ mod tests{
         let seed = mnemonic.to_seed("");
         
 
-        println!("The seed is {:?}", seed.as_bytes());
+        /*println!("The seed is {:?}", seed.as_bytes());
         
+        let xx = "elliel";
+        let yy : [u8; 32] = xx.as_bytes();
 
         let seed = [
             1, 0, 52, 0, 0, 0, 0, 0, 1, 0, 10, 0, 22, 32, 0, 0, 2, 0, 55, 49, 0, 11, 0, 0, 3, 0, 0, 0, 0,
             0, 2, 92,
-        ];
+        ];*/
 
         //let mut seed = rand_chacha::ChaCha8Rng();
 
-        let mut seed = rand_chacha::ChaCha8Rng::from_seed(seed);
+        let hash_ = PhraseMnemo1{
+            phrase : String::from("wreck mad stand kidney cabin area wheat steak attend fortune aerobic library input puzzle burger hurt draw rice ripple slab object certain total visit")
+        };
+
+        let mut s = DefaultHasher::new();
+        hash_.hash(&mut s);
+        //hash_.hash(&mut s);
+        //let seed_u64 = s.finish();
+        let seed_u64 = s.finish();
+    
+        
+
+        let private_b58 = "xprv9s21ZrQH143K3eqC5UZQ2Ysk6y3TAuhB8kw98SKoAGMvvmkViV8PFACUaAfVbhj776JEV5Z5Gs2ostQ2p1s5RgHmBFuJgum4tkWUtefcN2q";
+        let privx = bs58::decode(private_b58).with_alphabet(bs58::Alphabet::RIPPLE).into_vec().unwrap();
+        
+        
+
+        let mut seed = rand_chacha::ChaCha8Rng::seed_from_u64(seed_u64);
 
         let rsa_ = RsaPrivateKey::new(&mut seed, 256).unwrap();
         let str_rsa = rsa_.to_pkcs1_pem(rsa::pkcs8::LineEnding::default()).unwrap().to_string();
         println!("{:?}", str_rsa);
-
+        
         return;
 
         let privx = RsaPrivateKey::from_components(comp_1, comp_2, comp_3, primes);
