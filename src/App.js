@@ -1,5 +1,5 @@
 import {useState, useEffect, useRef} from "react";
-import init,{get_mnemonic, generate_keys,rsa_encrypt, get_private_key, get_public_key, generate_mnemonic_phrase} from "rsa-encrypt";
+import init,{get_file,get_mnemonic, generate_keys,rsa_encrypt, get_private_key, get_public_key, generate_mnemonic_phrase} from "rsa-encrypt";
 
 
 
@@ -14,11 +14,12 @@ const App = () => {
   const handleFileAdded = async (e, f) => {
     const reader = new FileReader();
     reader.onload = (evt) => {
-      console.log(evt.target.result);
+      //console.log(evt.target.result);
       
-      console.log(`Private key ${private_key}`);
+      //console.log(`Private key ${private_key}`);
       file_content = evt.target.result;
-  
+      //console.log(file_content);
+      console.log("Encrypted is here",get_file(file_content));
     };
     reader.readAsText(e.target.files[0]);
   }

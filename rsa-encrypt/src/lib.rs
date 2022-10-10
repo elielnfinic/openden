@@ -121,6 +121,11 @@ pub fn encrypt_data(data : &str, phrase : &str, password : &str) -> String{
     String::new()
 }
 
+#[wasm_bindgen]
+pub fn get_file(data : &str) -> String{
+    data.to_string()
+}
+
 #[cfg(test)]
 mod tests{
     //use std::{collections::hash_map::DefaultHasher, hash::Hasher};
@@ -195,7 +200,7 @@ mod tests{
         let rsa_ = RsaPrivateKey::new(&mut seed, 256).unwrap();
         let str_rsa = rsa_.to_pkcs1_pem(rsa::pkcs8::LineEnding::default()).unwrap().to_string();
         println!("{:?}", str_rsa);
-        
+
         return;
 
         let privx = RsaPrivateKey::from_components(comp_1, comp_2, comp_3, primes);
