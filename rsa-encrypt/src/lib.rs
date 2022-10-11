@@ -123,7 +123,9 @@ pub fn encrypt_data(data : &str, phrase : &str, password : &str) -> String{
 
 #[wasm_bindgen]
 pub fn get_file(data : &str) -> String{
-    data.to_string()
+    let bytes = data.as_bytes();
+    let number = format!("{:?}",bytes);
+    number
 }
 
 #[cfg(test)]
@@ -152,6 +154,19 @@ mod tests{
     #[derive(Hash)]
     struct PhraseMnemo1{
         phrase : String
+    }
+
+    #[test]
+    pub fn second1(){
+        let phrase = "wreck mad stand kidney cabin area wheat steak attend fortune aerobic library input puzzle burger hurt draw rice ripple slab object certain total visit";
+        let mnemonic = super::Mnemonic::new(phrase, Default::default()).unwrap();
+        let seed = mnemonic.to_seed("");
+        let mnemonic = super::Mnemonic::new(phrase, Default::default()).unwrap();
+        let private_key = super::XPrv::new(&seed).unwrap();
+        let priv_ext = private_key.attrs();
+        let chain_code:[u8; 32] = priv_ext.chain_code;
+        println!("{:?}",chain_code);
+        //private_key.to_string(Prefix::XPRV).to_string()
     }
 
     #[test]
