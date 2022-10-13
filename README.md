@@ -1,8 +1,6 @@
-# IPFS-Encrypt 
+# OpenDen
 
-Secure protected data on IPFS 
-
-Needs a wallet. 
+A private file store for the IPFS. 
 
 0.5% done 
 
