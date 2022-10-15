@@ -1,6 +1,9 @@
 import logo from "../res/logo.png";
+import React, {Component} from 'react';
 import { Popover, Transition } from '@headlessui/react'
-import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
+//import { Bars3Icon, XMarkIcon } from "@heroicons/react/24/outline";
+import { Bars3Icon, BellIcon, XMarkIcon } from '@heroicons/react/24/outline';
+//import {Bars3Icon} from "@heroicons/react/ou"
 import { Fragment } from 'react'
 
 const navigation = [

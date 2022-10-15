@@ -7,13 +7,13 @@ class SignUp extends Component {
         return(
             <div>
             <WebMenus/>
-                <main className="mx-auto mt-10 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
-                    <h1 className="font-bold  text-base text-slate-900 mb-5">Sign Up</h1>
+                <main className="mx-auto mt-1 max-w-7xl px-4 sm:mt-12 sm:px-6 md:mt-16 lg:mt-20 lg:px-8 xl:mt-28">
+                    <h1 className="font-bold text-3xl text-slate-900 mb-5 text-center">Sign up now</h1>
 
-                    <div className="mb-2">Please, use the following mnemonic to sign up </div>
+                    <div className="mb-2">Please, use the following password to sign up </div>
 
                     <div className="">
-                        <p>mnemonic: 
+                        <p>
                             <div className="p-10 bg-blue-100 rounded-md flex flex-row">
                                 <div className="basis-11/12">
                                     abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about 
@@ -29,7 +29,12 @@ class SignUp extends Component {
                     </div>
 
                     <div>
-                        <button className="mt-1 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 md:py-4 md:px-10 md:text-lg">Sign up</button>
+                        <small className="text-red-700">
+                            <input type="checkbox"/> I confirm that I have kept this password safe. If lost, you can redeem your files</small>
+                    </div>
+
+                    <div>
+                        <button className="mt-1 flex items-center justify-center rounded-md border border-transparent bg-openden1 px-8 py-3 text-base font-medium text-white hover:bg-openden2 md:py-4 md:px-10 md:text-lg">Sign up</button>
                     </div>
                 </main>
             </div>
