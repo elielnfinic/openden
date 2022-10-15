@@ -166,6 +166,11 @@ mod tests{
         let priv_ext = private_key.attrs();
         let chain_code:[u8; 32] = priv_ext.chain_code;
         println!("{:?}",chain_code);
+        let mut seed = rand_chacha::ChaCha8Rng::from_seed(chain_code);
+
+        let rsa_ = RsaPrivateKey::new(&mut seed, 256).unwrap();
+        let str_rsa = rsa_.to_pkcs1_pem(rsa::pkcs8::LineEnding::default()).unwrap().to_string();
+        println!("{:?}", str_rsa);
         //private_key.to_string(Prefix::XPRV).to_string()
     }
 
