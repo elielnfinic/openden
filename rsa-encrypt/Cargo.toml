@@ -20,6 +20,5 @@ base64 = "0.13.0"
 bs58 = "0.4.0"
 hex = "0.4.3"
 rand_chacha = "0.3.1"
-
-[lib]
-crate-type = ["cdylib", "rlib"]
+clarity = "0.5.2"
+hal = "0.8.2"
