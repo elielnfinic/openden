@@ -204,14 +204,14 @@ mod tests{
         let addr = child_xprv.derive_child(bip32::ChildNumber::new(0, true).unwrap()).unwrap();//.unwrap().to_string(super::Prefix::XPRV);
         let pub_addr = child_xprv.public_key().derive_child(bip32::ChildNumber(1)).unwrap();
         
-        let byt:[u8; 32] = addr.private_key().to_bytes().unwrap();
-        let priv_addr = bip32::PrivateKey::from_bytes(&byt);
+        //let byt:[u8; 32] = addr.private_key().to_bytes().unwrap();
+        //let priv_addr = bip32::PrivateKey::from_bytes(&byt);
         //priv_addr.
         
         //let pub__addr__ = pub_addr.
 
-        println!("\n\nThe public key is {:?}",pub_addr.to_string(super::Prefix::XPUB));
-        println!("\n\nThe private key is {:?}", priv_addr.to_String());
+        //println!("\n\nThe public key is {:?}",pub_addr.to_string(super::Prefix::XPUB));
+        //println!("\n\nThe private key is {:?}", priv_addr.to_String());
 
 
 
