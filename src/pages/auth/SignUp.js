@@ -1,8 +1,25 @@
 import React,{Component} from "react";
 import WebMenus from "../../shared_components/web_site_menus";
-
+//import init,{hello_ze_world} from "test-wasm";
+import init,{get_mnemonic} from "rsa-encrypt";
 
 class SignUp extends Component {
+    state = {
+        mnemonic : ''
+    }
+
+    getMnemonic = async () => {
+        await init();
+        this.setState({
+            mnemonic : await get_mnemonic()
+        });
+        
+    }
+
+    componentDidMount(){
+        this.getMnemonic();
+    }
+
     render(){
         return(
             <div>
@@ -16,7 +33,7 @@ class SignUp extends Component {
                         <p>
                             <div className="p-10 bg-blue-100 rounded-md flex flex-row">
                                 <div className="basis-11/12">
-                                    abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon abandon about 
+                                    {this.state.mnemonic}
                                 </div>
                                 <div className="grid-cols-1/12">
                                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
