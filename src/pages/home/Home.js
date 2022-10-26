@@ -4,6 +4,8 @@ import { Popover, Transition } from '@headlessui/react'
 //import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline';
 import WebMenus from '../../shared_components/web_site_menus';
 
+import bgHomePic from '../../res/bg-home.png';
+
 
 export default function Home() {
   return (
@@ -44,11 +46,7 @@ export default function Home() {
         </div>
       </div>
       <div className="lg:absolute lg:inset-y-0 lg:right-0 lg:w-1/2">
-        <img
-          className="h-56 w-full object-cover sm:h-72 md:h-96 lg:h-full lg:w-full"
-          src="https://images.unsplash.com/photo-1551434678-e076c223a692?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2850&q=80"
-          alt=""
-        />
+        
       </div>
     </div>
   )

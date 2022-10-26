@@ -1,15 +1,20 @@
-pub fn generate_mnemonic(){
+use bip32::{Mnemonic, XPrv, ExtendedPrivateKey, ExtendedPublicKey};
+use rand_core::OsRng;
 
+
+pub fn generate_mnemonic() -> Mnemonic{
+    Mnemonic::random(&mut OsRng,Default::default())
 }
 
-pub fn generate_private_key(){
-
+pub fn xprivate_key(mnemo : Mnemonic, password : &str) -> ExtendedPrivateKey{
+    let seed = mnemo.to_seed(password);
+    XPrv::new(&seed).unwrap()
 }
 
-pub fn generate_public_key(){
-
+pub fn xpublic_key(xprv : ExtendedPrivateKey) -> ExtendedPublicKey{
+    xprv.public_key()
 }
 
-pub fn get_blockchain_public_key(){
-    
+pub fn get_blockchain_address(){
+    //TBD
 }
