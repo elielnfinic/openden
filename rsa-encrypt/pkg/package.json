@@ -1,0 +1,12 @@
+{
+  "name": "rsa-encrypt",
+  "version": "0.1.0",
+  "files": [
+    "rsa_encrypt_bg.wasm",
+    "rsa_encrypt.js",
+    "rsa_encrypt.d.ts"
+  ],
+  "module": "rsa_encrypt.js",
+  "types": "rsa_encrypt.d.ts",
+  "sideEffects": false
+}
