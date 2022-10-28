@@ -58,6 +58,9 @@ export default function Newsletter() {
                     Notify me
                   </button>
                 </div>
+                <div>
+                  
+                </div>
               </form>
           
           </div>
