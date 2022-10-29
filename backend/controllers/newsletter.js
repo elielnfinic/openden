@@ -1,4 +1,5 @@
 const Contact = require("../model/Contact");
+const { sendEmail } = require("../utils/email");
 
 exports.subscribe = (req, res, next) => {
     const {email} = req.body;
@@ -18,6 +19,9 @@ exports.subscribe = (req, res, next) => {
                     error: "Email address is already registered"
                 });
             }
+
+            sendEmail(email, "Thank you for your interest in Openden", "Openden is planning to give better experience in private files management on the blockchain. We will let you when we launch.");
+            
             res.json({contact});
         });
     });
