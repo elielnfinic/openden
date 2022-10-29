@@ -1,10 +1,9 @@
 const {post} = require("./api");
 
-exports.add = async (email, callback) => {
+export const add_subscriber = async (email, callback) => {
     return new Promise((resolve, reject) => {
         post("subscribe", {email}, callback).then(response => {
             resolve(response);
         });
     });
-    
 }
