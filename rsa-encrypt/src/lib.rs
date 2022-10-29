@@ -21,6 +21,10 @@ pub fn check_mnemonic(phrase : &str) -> String{
     }
 }
 
+#[wasm_bindgen]
+pub fn encrypt_data(data : &str) -> String{
+    String::from("Successful encryption")
+}
 
 #[wasm_bindgen]
 pub fn generate_keys() -> String{
