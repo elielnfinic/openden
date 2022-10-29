@@ -1,13 +1,13 @@
-const {Schema} = require("mongoose");
 const mongoose = require("mongoose");
+const {ObjectId} = mongoose.Schema;
 
-const Contact = new Schema({
-    name: { type: String, default: 'hahaha' },
-    age: { type: Number, min: 18, index: true },
-    bio: { type: String, match: /[a-z]/ },
-    date: { type: Date, default: Date.now },
-    buff: Buffer
+const Contact = new mongoose.Schema({
+    email : {
+        type : String, 
+        required : "Email address is required",
+        minlength : 2,
+        maxlength : 200
+    }
 });
   
-
-  
+module.exports = mongoose.model("Contact", Contact);  
