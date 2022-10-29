@@ -1,6 +1,6 @@
 const {BACK_END_URL} = require("../config");
 
-exports.post = async (endpoint, data) => {
+export const post = async (endpoint, data) => {
     return new Promise((resolve, reject) => {
         fetch(`${BACK_END_URL}/${endpoint}`,{
             method : "POST",
