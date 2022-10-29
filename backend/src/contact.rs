@@ -13,7 +13,7 @@ async fn connect_db() -> Client{
 pub async fn add(req_body: String) -> impl Responder {
     ///let db = connect_db();
 
-    let client = Client::with_uri_str("mongodb+srv://test_user:gndl5e6AbUghJjfy@cluster0.za95y.mongodb.net/openden?retryWrites=true&w=majority").await.unwrap();
+    let client = Client::with_uri_str(dotenv::var("MONGO_URI").unwrap()).await.unwrap();
     let db = client.database("openden");
     let collection = db.collection::<Document>("contacts");
     collection.insert_many(vec![doc!{"email":"eliel@test.com"}],None).await.unwrap();
