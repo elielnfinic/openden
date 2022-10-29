@@ -67,7 +67,7 @@ export default function Newsletter() {
                   className="w-full  flex-1 rounded-md border-gray-300 px-5 py-3 placeholder-gray-500 focus:border-openden2 focus:ring-openden1 sm:max-w-xs"
                   placeholder="Enter your email"
                 />
-                <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0 flex-1">
+                <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 sm:flex-shrink-0 flex-1">
                   <button
                     type="submit"
                     className="flex items-center justify-center rounded-md border border-transparent bg-openden1 px-5 py-3 text-base font-medium text-white hover:bg-openden2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
