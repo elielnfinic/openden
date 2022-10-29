@@ -1,8 +1,9 @@
 import React,{useState} from "react";
+import {add_subscriber} from "../../net/subscribe";
 
 import open_den_logo from "../../res/icon.png";
 
-import {add} from "../../net/subscribe";
+
 import finish_line from "./res/finish_line.svg";
 
 export default function Newsletter() {
@@ -16,7 +17,7 @@ export default function Newsletter() {
 
     const handleSubmit = async (e) => {
       e.preventDefault();
-      add(email_addr).then(response => {
+      add_subscriber(email_addr).then(response => {
         console.log(response);
         if(response.error){
           set_error_msg(response.error);
