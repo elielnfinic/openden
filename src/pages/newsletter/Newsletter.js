@@ -35,49 +35,48 @@ export default function Newsletter() {
          
 
           {success === "" ? (<div className="mt-10">
-            <div className="text-center inline-flex">
-              <img src={open_den_logo} className="w-20 rounded-3xl"/>
+            <div className="text-center">
+              <img src={open_den_logo} className="w-20 rounded-3xl inline"/>
             </div>
-
-            <h2 className="inline text-3xl font-bold tracking-tight text-gray-900 sm:block sm:text-4xl">
-              Get ready for the personal files wallet on the blockchain
-            </h2>
+            <div className="my-6">
+              <h2 className="inline text-3xl font-bold tracking-tight text-gray-900 sm:block sm:text-4xl">
+                Get ready for the personal files wallet on the blockchain
+              </h2>
+            </div>
             <p>
               Store your personal photos - videos - documents - files on the blockchain
             </p>
-            <p className="mt-2 inline text-3xl font-bold tracking-tight text-openden2 sm:block sm:text-4xl">
+            <p className="mt-6 inline text-3xl font-bold tracking-tight text-openden2 sm:block sm:text-4xl">
               Join the waitlist 
             </p>
 
           
-              <form method="post" onSubmit={handleSubmit} className="mt-8 flex inline-block items-center">
-              <div class="flex-1 ">
-    
-              </div>
-                <label htmlFor="email-address" className="sr-only">
-                  Email address 
-                </label>
-                <input
-                  id="email-address"
-                  name="email"
-                  type="email"
-                  onChange={handleChange}
-                  autoComplete="email"
-                  required
-                  className="w-full  flex-1 rounded-md border-gray-300 px-5 py-3 placeholder-gray-500 focus:border-openden2 focus:ring-openden1 sm:max-w-xs"
-                  placeholder="Enter your email"
-                />
-                <div className="mt-3 rounded-md shadow sm:mt-0 sm:ml-3 sm:flex-shrink-0 flex-1">
-                  <button
-                    type="submit"
-                    className="flex items-center justify-center rounded-md border border-transparent bg-openden1 px-5 py-3 text-base font-medium text-white hover:bg-openden2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                  >
-                    Notify me
-                  </button>
+              <form method="post" onSubmit={handleSubmit} className="mt-8 md:flex inline-block items-center">
+              <div className="md:flex mx-auto ">
+                <div className="md:flex-2">
+                    <label htmlFor="email-address" className="sr-only">
+                      Email address 
+                    </label>
+                    <input
+                      id="email-address"
+                      name="email"
+                      type="email"
+                      onChange={handleChange}
+                      autoComplete="email"
+                      required
+                      className="w-full  md:flex-1 rounded-md border-gray-300 px-5 py-3 placeholder-gray-500 focus:border-openden2 focus:ring-openden1 sm:max-w-xs"
+                      placeholder="Enter your email"
+                    />
                 </div>
-                
-                <div>
-               
+                  <div className="mt-3 rounded-md sm:mt-0 sm:ml-3 md:flex-1 sm:w-full">
+                    <button
+                      type="submit"
+                      className="flex items-center w-full justify-center rounded-md border border-transparent bg-openden1 px-5 py-3 text-base font-medium text-white hover:bg-openden2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+                    >
+                      Notify me
+                    </button>
+                  </div>
+                               
                 </div>
               </form>
               {error ? <div className="bg-red-300 px-6 py-2 mt-4 inline-block animate-pulse rounded-md">{error}</div> : '' }

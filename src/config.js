@@ -1,1 +1,1 @@
-export const BACK_END_URL = "http://localhost:4500";
+export const BACK_END_URL = "https://production.d33f64ml40aqvx.amplifyapp.com";
