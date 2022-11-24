@@ -292,6 +292,7 @@ dependencies = [
  "dotenv",
  "mongodb",
  "serde",
+ "serde_json",
 ]
 
 [[package]]
