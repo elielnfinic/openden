@@ -1,0 +1,1 @@
+ssh -i "./openden-keypair.pem" ec2-user@ec2-44-203-119-121.compute-1.amazonaws.com

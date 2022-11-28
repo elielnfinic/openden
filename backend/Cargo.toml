@@ -7,8 +7,10 @@ edition = "2021"
 
 [dependencies]
 actix = "0.13.0"
+actix-cors = "0.6.4"
 actix-web = "4.2.1"
 dotenv = "0.15.0"
+lightmon = "0.2.0"
 mail-builder = "0.2.4"
 mail-send = "0.2.3"
 mongodb = "2.3.1"

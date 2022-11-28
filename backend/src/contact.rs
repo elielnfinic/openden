@@ -45,10 +45,20 @@ pub async fn add(req_body: String) -> impl Responder {
                     .send(message)
                     .await
                     .unwrap();
-                    HttpResponse::Ok().body("{msg : 'success'}")
+                    HttpResponse::Ok()
+                    .header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+                    .header("Access-Control-Allow-Headers", "Content-Type")
+                    .header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Credentials", "true")
+                    .body("{msg : 'success'}")
         },
         Err(_) => {
-            HttpResponse::Ok().body("{msg : 'error'}")
+            HttpResponse::Ok()
+                    .header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
+                    .header("Access-Control-Allow-Headers", "Content-Type")
+                    .header("Access-Control-Allow-Origin", "*")
+                    .header("Access-Control-Allow-Credentials", "true")
+                    .body("{msg : 'error'}")
         }
     }
 }
