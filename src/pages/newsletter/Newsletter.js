@@ -80,7 +80,7 @@ export default function Newsletter() {
                       className="flex items-center w-full justify-center rounded-md border border-transparent bg-openden1 px-5 py-3 text-base font-medium text-white hover:bg-openden2 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
                       disabled={loading}
                     >
-                      {loading ? (<img src={loading_animation} height={22} alt="Loading animation"/>) :' Notify me' }
+                      {loading ? (<img src={loading_animation} style={{height:"22px"}} alt="Loading animation"/>) :' Notify me' }
                     </button>
                   </div>
                                
