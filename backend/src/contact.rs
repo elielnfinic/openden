@@ -50,7 +50,7 @@ pub async fn add(req_body: String) -> impl Responder {
                     .header("Access-Control-Allow-Headers", "Content-Type")
                     .header("Access-Control-Allow-Origin", "*")
                     .header("Access-Control-Allow-Credentials", "true")
-                    .body("{msg : 'success'}")
+                    .body("{'msg' : 'success'}")
         },
         Err(_) => {
             HttpResponse::Ok()
@@ -58,7 +58,7 @@ pub async fn add(req_body: String) -> impl Responder {
                     .header("Access-Control-Allow-Headers", "Content-Type")
                     .header("Access-Control-Allow-Origin", "*")
                     .header("Access-Control-Allow-Credentials", "true")
-                    .body("{msg : 'error'}")
+                    .body("{'msg' : 'error'}")
         }
     }
 }

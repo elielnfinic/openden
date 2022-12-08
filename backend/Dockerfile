@@ -1,4 +1,4 @@
-FROM --platform=linux/x86-64 rust
+FROM --platform=linux/amd64 rust
 WORKDIR /usr/src/myapp
 COPY . .
 RUN cargo install --path .
