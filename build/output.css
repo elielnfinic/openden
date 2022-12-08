@@ -772,6 +772,16 @@ select {
   margin-bottom: 1rem;
 }
 
+.my-10 {
+  margin-top: 2.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.my-6 {
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
 .ml-10 {
   margin-left: 2.5rem;
 }
@@ -826,6 +836,10 @@ select {
 
 .mt-4 {
   margin-top: 1rem;
+}
+
+.mt-6 {
+  margin-top: 1.5rem;
 }
 
 .block {
@@ -950,6 +964,10 @@ select {
 
 .flex-1 {
   flex: 1 1 0%;
+}
+
+.flex-auto {
+  flex: 1 1 auto;
 }
 
 .flex-shrink-0 {
@@ -1670,6 +1688,14 @@ select {
     height: 2.5rem;
   }
 
+  .sm\:w-full {
+    width: 100%;
+  }
+
+  .sm\:w-auto {
+    width: auto;
+  }
+
   .sm\:max-w-xl {
     max-width: 36rem;
   }
@@ -1745,12 +1771,28 @@ select {
     display: block;
   }
 
+  .md\:inline-block {
+    display: inline-block;
+  }
+
+  .md\:flex {
+    display: flex;
+  }
+
   .md\:hidden {
     display: none;
   }
 
   .md\:w-auto {
     width: auto;
+  }
+
+  .md\:flex-auto {
+    flex: 1 1 auto;
+  }
+
+  .md\:flex-1 {
+    flex: 1 1 0%;
   }
 
   .md\:space-x-8 > :not([hidden]) ~ :not([hidden]) {
